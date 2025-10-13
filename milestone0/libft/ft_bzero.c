@@ -17,8 +17,7 @@ void	ft_bzero(void *s, size_t n)
 
 int	main(void)
 {
-
-	    char buffer[10] = "abcdefgh";
+	char buffer[10] = "abcdefgh";
 
     printf("Antes de ft_bzero: ");
     for (int i = 0; i < 10; i++)
