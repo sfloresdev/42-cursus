@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:18:51 by seflores          #+#    #+#             */
-/*   Updated: 2025/09/30 20:08:08 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/14 16:40:11 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 int	ft_isalpha(char c)
 {

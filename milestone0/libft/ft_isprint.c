@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 18:58:10 by seflores          #+#    #+#             */
-/*   Updated: 2025/09/30 19:08:14 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/14 17:24:32 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_isprint(char c)
 {
-	if (c >= 32 && c < 127)
+	if (c >= 32 && c <= 126)
 	{
 		return (1);
-	}	
+	}
 	return (0);
 }

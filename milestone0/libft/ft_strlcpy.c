@@ -1,12 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/14 18:17:45 by seflores          #+#    #+#             */
+/*   Updated: 2025/10/14 18:23:54 by seflores         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	len;
 
 	i = 0;
-	len = ft_strlen(src);
 	if (size != 0)
 	{
 		while (src[i] && i < (size - 1))
@@ -16,43 +26,72 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		}
 		dst[i] = '\0';
 	}
-	return (len);
+	return (ft_strlen(src));
 }
-
-
 int	main(void)
 {
-	    struct test_case {
-        const char *src;
-        size_t size;
-    } tests[] = {
-        {"Hola mundo", 6},
-        {"Hola", 10},
-        {"", 5},
-        {"12345", 0},
-        {"12345", 5}
-    };
+	char dest1[20];
+	char dest2[20];
+	size_t ret_ft, ret_std;
 
-    char dst1[20];
-    char dst2[20];
+	const char *src1 = "Hola Mundo";
+	const char *src2 = "ABCDE";
 
-    for (int t = 0; t < 5; t++)
-    {
-        memset(dst1, 'X', sizeof(dst1)); // llenar con basura
-        memset(dst2, 'X', sizeof(dst2));
+	printf("=== CASOS DE PRUEBA ft_strlcpy ===\n\n");
 
-        size_t ret1 = ft_strlcpy(dst1, tests[t].src, tests[t].size);
-        size_t ret2 = strlcpy(dst2, tests[t].src, tests[t].size);
+	// 1. Copia normal, buffer suficiente
+	memset(dest1, 'X', sizeof(dest1));
+	memset(dest2, 'X', sizeof(dest2));
+	ret_ft = ft_strlcpy(dest1, src1, sizeof(dest1));
+	ret_std = strlcpy(dest2, src1, sizeof(dest2));
+	printf("Test 1: size = 20\n");
+	printf("ft_strlcpy -> \"%s\" (ret: %zu)\n", dest1, ret_ft);
+	printf("strlcpy    -> \"%s\" (ret: %zu)\n\n", dest2, ret_std);
 
-        printf("Test %d: src='%s', size=%zu\n", t+1, tests[t].src, tests[t].size);
-        printf("  ft_strlcpy: dst='%s', return=%zu\n", dst1, ret1);
-        printf("  strlcpy   : dst='%s', return=%zu\n", dst2, ret2);
+	// 2. Buffer justo
+	memset(dest1, 'X', sizeof(dest1));
+	memset(dest2, 'X', sizeof(dest2));
+	ret_ft = ft_strlcpy(dest1, src1, 5);
+	ret_std = strlcpy(dest2, src1, 5);
+	printf("Test 2: size = 5 (corte)\n");
+	printf("ft_strlcpy -> \"%s\" (ret: %zu)\n", dest1, ret_ft);
+	printf("strlcpy    -> \"%s\" (ret: %zu)\n\n", dest2, ret_std);
 
-        if (ret1 == ret2 && strcmp(dst1, dst2) == 0)
-            printf("  Resultado: OK ✅\n\n");
-        else
-            printf("  Resultado: FAILED ❌\n\n");
-    }
+	// 3. size = 0 → no copia nada, solo retorna longitud de src
+	memset(dest1, 'X', sizeof(dest1));
+	memset(dest2, 'X', sizeof(dest2));
+	ret_ft = ft_strlcpy(dest1, src1, 0);
+	ret_std = strlcpy(dest2, src1, 0);
+	printf("Test 3: size = 0 (sin copia)\n");
+	printf("ft_strlcpy -> \"%s\" (ret: %zu)\n", dest1, ret_ft);
+	printf("strlcpy    -> \"%s\" (ret: %zu)\n\n", dest2, ret_std);
+
+	// 4. src vacío
+	memset(dest1, 'X', sizeof(dest1));
+	memset(dest2, 'X', sizeof(dest2));
+	ret_ft = ft_strlcpy(dest1, "", sizeof(dest1));
+	ret_std = strlcpy(dest2, "", sizeof(dest2));
+	printf("Test 4: src vacío\n");
+	printf("ft_strlcpy -> \"%s\" (ret: %zu)\n", dest1, ret_ft);
+	printf("strlcpy    -> \"%s\" (ret: %zu)\n\n", dest2, ret_std);
+
+	// 5. size = 1 → solo debe escribir '\0'
+	memset(dest1, 'X', sizeof(dest1));
+	memset(dest2, 'X', sizeof(dest2));
+	ret_ft = ft_strlcpy(dest1, src2, 1);
+	ret_std = strlcpy(dest2, src2, 1);
+	printf("Test 5: size = 1 (solo nulo)\n");
+	printf("ft_strlcpy -> \"%s\" (ret: %zu)\n", dest1, ret_ft);
+	printf("strlcpy    -> \"%s\" (ret: %zu)\n\n", dest2, ret_std);
+
+	// 6. src largo, buffer pequeño
+	memset(dest1, 'X', sizeof(dest1));
+	memset(dest2, 'X', sizeof(dest2));
+	ret_ft = ft_strlcpy(dest1, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 10);
+	ret_std = strlcpy(dest2, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 10);
+	printf("Test 6: src más largo que dst\n");
+	printf("ft_strlcpy -> \"%s\" (ret: %zu)\n", dest1, ret_ft);
+	printf("strlcpy    -> \"%s\" (ret: %zu)\n\n", dest2, ret_std);
 
 	return (0);
 }

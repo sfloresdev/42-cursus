@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 19:54:07 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/14 18:24:49 by seflores         ###   ########.fr       */
+/*   Created: 2025/10/14 19:46:26 by seflores          #+#    #+#             */
+/*   Updated: 2025/10/14 19:51:24 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+char    ft_strdup(const char *s)
 {
-	int	i;
 
-	i = ft_strlen(str);
-	while (i >= 0)
-	{
-		if (str[i] == (char)c)
-		{
-			return ((char *)(str + i));
-		}
-		i--;
-	}
-	return (NULL);
+
+
+
+
+    
+    return ('a');
+}
+
+int main()
+{
+    
 }

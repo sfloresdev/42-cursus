@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 17:19:42 by seflores          #+#    #+#             */
-/*   Updated: 2025/09/30 18:26:15 by seflores         ###   ########.fr       */
+/*   Created: 2025/10/14 16:39:37 by seflores          #+#    #+#             */
+/*   Updated: 2025/10/14 16:39:39 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
