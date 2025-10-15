@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 18:25:34 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/14 19:41:10 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/15 21:01:59 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	return (NULL);
 }
-
+/*
 int	main(void)
 {
 	int i;
@@ -87,4 +87,4 @@ int	main(void)
 	printf("Test 5: overflow, puntero = %p (debe ser NULL)\n", (void *)ptr);
 
 	return (0);
-}
+}*/

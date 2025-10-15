@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 18:27:42 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/14 17:23:13 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/15 21:00:39 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-
+/*
 int	main(void)
 {
 	const char *tests[] = {"42",
@@ -70,4 +70,4 @@ int	main(void)
 	}
 
 	return (0);
-}
+}*/

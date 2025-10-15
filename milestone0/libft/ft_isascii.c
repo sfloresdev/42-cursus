@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 18:41:27 by seflores          #+#    #+#             */
-/*   Updated: 2025/09/30 19:11:05 by seflores         ###   ########.fr       */
+/*   Created: 2025/10/15 21:02:55 by seflores          #+#    #+#             */
+/*   Updated: 2025/10/15 21:03:21 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

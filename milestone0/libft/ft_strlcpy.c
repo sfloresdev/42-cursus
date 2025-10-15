@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 18:17:45 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/14 18:23:54 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/15 17:29:41 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	return (ft_strlen(src));
 }
+/*
 int	main(void)
 {
 	char dest1[20];
@@ -94,4 +95,4 @@ int	main(void)
 	printf("strlcpy    -> \"%s\" (ret: %zu)\n\n", dest2, ret_std);
 
 	return (0);
-}
+}*/

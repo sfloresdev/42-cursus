@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 16:36:03 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/14 17:57:17 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/15 21:04:25 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
+/*
 int	main(void)
 {
 	char			a1[] = "Hola";
@@ -68,4 +68,4 @@ int	main(void)
 	printf("ft_memcmp: %d\n", ft_memcmp(a6, b6, 3));
 	printf("memcmp:    %d\n\n", memcmp(a6, b6, 3));
 	return (0);
-}
+}*/

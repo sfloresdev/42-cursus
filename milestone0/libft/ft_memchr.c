@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 17:59:07 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/14 17:59:11 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/15 21:03:59 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
+/*
 int	main(void)
 {
 	const char	test1[] = "Hola mundo";
@@ -73,4 +73,4 @@ int	main(void)
 	res_ft = ft_memchr(test4, 'a', 1);
 	printf("Test 8: %s\n", (res_ft == res_libc) ? "OK" : "FAIL");
 	return (0);
-}
+}*/

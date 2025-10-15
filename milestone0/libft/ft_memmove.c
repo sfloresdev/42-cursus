@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 18:10:42 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/14 18:12:34 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/15 21:04:48 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
+/*
 int	main(void)
 {
 	char	src1[] = "Hola mundo";
@@ -50,4 +50,4 @@ int	main(void)
 	ft_memmove(str2 + 2, str2, 5);
 	printf("Solapamiento adelante: %s\n", str2);
 	return (0);
-}
+}*/

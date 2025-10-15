@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 16:48:13 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/14 19:46:11 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/15 18:34:48 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_isdigit(char c);
 int		ft_isalnum(char c);
 int		ft_isascii(char c);
 int		ft_isprint(char c);
-int		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 int		ft_toupper(char c);
 int		ft_tolower(char c);
 char	*ft_strchr(const char *str, int c);
@@ -40,5 +40,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+char	*ft_strdup(const char *s);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 16:38:24 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/14 16:38:32 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/15 21:01:37 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
+/*
 int	main(void)
 {
 	char	buffer[10] = "abcdefgh";
@@ -40,4 +40,4 @@ int	main(void)
 		printf("%d ", buffer[i]); // todos deberían ser 0
 	printf("\n");
 	return (0);
-}
+}*/
