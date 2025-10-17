@@ -4,6 +4,8 @@
         "stdlib.h": "c",
         "stdio.h": "c",
         "limits.h": "c",
-        "libft.h": "c"
+        "libft.h": "c",
+        "unistd.h": "c",
+        "stdint.h": "c"
     }
 }
