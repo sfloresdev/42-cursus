@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 18:25:34 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/15 21:01:59 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/18 16:47:38 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (size != 0 && nmemb > SIZE_MAX / size)
 		return (NULL);
 	total = nmemb * size;
+	if (total == 0)
+		total = 1;
 	ptr = malloc(total);
-	if (ptr != NULL)
-	{
-		ft_memset(ptr, 0, total);
-		return (ptr);
-	}
-	return (NULL);
+	if (!ptr)
+		return (NULL);
+	ft_memset(ptr, 0, total);
+	return (ptr);
 }
 /*
 int	main(void)
