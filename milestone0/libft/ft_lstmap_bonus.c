@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 17:59:48 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/18 21:33:54 by seflores         ###   ########.fr       */
+/*   Created: 2025/10/19 18:19:07 by seflores          #+#    #+#             */
+/*   Updated: 2025/10/19 18:58:48 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
+	t_list	*list;
+	t_list	*new_node;
+	void	*new_content;
 
-	i = 0;
-	while (n > 0)
+	if (!f || !del)
+		return (NULL);
+	list = NULL;
+	while (lst != NULL)
 	{
-		if (s1[i] != s2[i] || s1[i] == '\0' || s2[i] == '\0')
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
-		n--;
+		new_content = f(lst->content);
+		new_node = ft_lstnew(new_content);
+		if (!new_node)
+		{
+			del(new_content);
+			ft_lstclear(&list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&list, new_node);
+		lst = lst->next;
 	}
-	return (0);
+	return (list);
 }

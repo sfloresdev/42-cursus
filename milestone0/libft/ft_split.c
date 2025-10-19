@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 21:14:23 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/18 18:16:42 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/19 19:10:13 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,30 +36,47 @@ static size_t	count_words(char const *s, char c)
 	}
 	return (words);
 }
-
-static char	*g_word(char const *s, int start, int stop)
+/*
+static char	*g_word(char const *s, int start, int end)
 {
 	char	*word;
 	int		i;
 
-	word = malloc((stop - start) + 1);
+	word = malloc((end - start) + 1);
 	if (!word)
 		return (NULL);
 	i = 0;
-	while (i < (stop - start))
+	while (i < (end - start))
 	{
 		word[i] = s[start + i];
 		i++;
 	}
 	word[i] = '\0';
 	return (word);
-}
+}*/
+
 static int	get_first_word(char const *s, char c, int *index)
 {
 	*index = 0;
 	while (s[*index] && s[*index] == c)
 		(*index)++;
 	return (*index);
+}
+
+static char	**free_pointers(char **array)
+{
+	size_t	i;
+
+	if (!array)
+		return (NULL);
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -69,26 +86,24 @@ char	**ft_split(char const *s, char c)
 	int		word;
 	int		start;
 
-	array = malloc( sizeof(char *) * count_words(s, c) + 1);
-	if (!array)
+	array = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!array || !s)
 		return (NULL);
 	word = 0;
 	start = get_first_word(s, c, &i);
 	while (s[i])
 	{
-		if (s[i + 1] == c || s[i + 1] == '\0')
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 		{
-			array[word] = g_word(s, start, i + 1);
-			if (!array[word])
-				return (free_pointers());
+			array[word] = ft_substr(s, start, (i - start) + 1);
+			if (!array[word++])
+				return (free_pointers(array));
+			while (s[i + 1] && s[i + 1] == c)
+				i++;
+			start = i + 1;
 		}
 		i++;
 	}
 	array[word] = NULL;
 	return (array);
-}
-
-int	main(void)
-{
-	return (0);
 }

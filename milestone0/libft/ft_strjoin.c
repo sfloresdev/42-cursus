@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 09:52:40 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/16 10:31:50 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/18 21:33:32 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
@@ -108,4 +107,3 @@ int	main(void)
 
 	return (0);
 }*/
-

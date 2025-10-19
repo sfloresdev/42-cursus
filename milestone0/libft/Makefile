@@ -1,5 +1,5 @@
 NAME = libft.a
-CC = cc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
@@ -40,24 +40,36 @@ SRC = ft_atoi.c \
 	ft_tolower.c \
 	ft_toupper.c
 
+BONUS_SRC = ft_lstadd_back_bonus.c \
+	ft_lstadd_front_bonus.c \
+	ft_lstclear_bonus.c \
+	ft_lstdelone_bonus.c \
+	ft_lstiter_bonus.c \
+	ft_lstlast_bonus.c \
+	ft_lstmap_bonus.c \
+	ft_lstnew_bonus.c \
+	ft_lstsize_bonus.c
+
 OBJ = $(SRC:.c=.o)
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(AR) $(NAME) $(OBJ)
+
+bonus: $(OBJ) $(BONUS_OBJ)
+	$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
 
 %.o: %.c $(INCLUDE)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Regla para crear la biblioteca
-$(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
-
-# ---- REGLAS PARA ELIMINAR ARCHIVOS ----
 clean: 
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BONUS_OBJ)
 
-fclean: cleans
+fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re

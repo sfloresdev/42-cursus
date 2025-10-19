@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 10:41:22 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/17 16:33:36 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/18 21:33:12 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
-		return;		
-	write(fd, s, ft_strlen(s));	
+		return ;
+	write(fd, s, ft_strlen(s));
 }
 /*
 int	main(void)
@@ -39,4 +39,3 @@ int	main(void)
 
 	return (0);
 }*/
-

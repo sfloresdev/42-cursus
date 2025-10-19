@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 19:29:08 by seflores          #+#    #+#             */
-/*   Updated: 2025/09/30 19:44:03 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/19 20:07:32 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(char c)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 	{
