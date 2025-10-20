@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 16:38:40 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/20 10:33:28 by seflores         ###   ########.fr       */
+/*   Created: 2025/11/09 23:53:37 by seflores          #+#    #+#             */
+/*   Updated: 2025/11/12 18:01:56 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# ifndef BUFFER_SIZE
+# define BUFFER_SIZE 42
+# endif
 
-void	ft_putnbr_fd(int n, int fd)
-{
-	if (n == -2147483648)
-	{
-		write(fd, "-2147483648", 11);
-		return ;
-	}
-	if (n < 0)
-	{
-		write(fd, "-", 1);
-		n = -n;
-	}
-	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
-	ft_putchar_fd((n % 10) + '0', fd);
-}
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdint.h>
+
+char	*get_next_line(int fd);
+int		ft_strlen(char *s);
+char	*ft_strchr(const char *str, int c);
+void	ft_calloc(size_t nmemb, size_t size);
+char	*ft_strchr(const char *str, int c);
+char	*ft_strjoin(char *s1, char *s2);
+
+#endif
