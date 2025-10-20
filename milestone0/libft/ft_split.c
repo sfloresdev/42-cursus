@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 21:14:23 by seflores          #+#    #+#             */
-/*   Updated: 2025/10/19 19:10:13 by seflores         ###   ########.fr       */
+/*   Updated: 2025/10/20 19:09:21 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,6 @@ static size_t	count_words(char const *s, char c)
 	}
 	return (words);
 }
-/*
-static char	*g_word(char const *s, int start, int end)
-{
-	char	*word;
-	int		i;
-
-	word = malloc((end - start) + 1);
-	if (!word)
-		return (NULL);
-	i = 0;
-	while (i < (end - start))
-	{
-		word[i] = s[start + i];
-		i++;
-	}
-	word[i] = '\0';
-	return (word);
-}*/
 
 static int	get_first_word(char const *s, char c, int *index)
 {
@@ -86,8 +68,10 @@ char	**ft_split(char const *s, char c)
 	int		word;
 	int		start;
 
+	if (!s)
+		return (NULL);
 	array = malloc(sizeof(char *) * (count_words(s, c) + 1));
-	if (!array || !s)
+	if (!array)
 		return (NULL);
 	word = 0;
 	start = get_first_word(s, c, &i);
@@ -95,7 +79,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 		{
-			array[word] = ft_substr(s, start, (i - start) + 1);
+			array[word] = ft_substr(&s[i], 0, (i - start) + 1);
 			if (!array[word++])
 				return (free_pointers(array));
 			while (s[i + 1] && s[i + 1] == c)
@@ -107,3 +91,47 @@ char	**ft_split(char const *s, char c)
 	array[word] = NULL;
 	return (array);
 }
+
+/* #include <stdio.h>
+
+int main()
+{
+// subtest 6: NULL string 
+    {
+        const char *s = NULL;
+        char c = ' ';
+        char **got = ft_split(s, c);
+        
+        if (got == NULL) printf("OK");
+        else
+        {
+            printf("expected NULL for NULL string");
+			int k = 0;
+            while(got[k])
+			{
+				free(got[k]);
+				k++;
+			}
+			free(got);
+        }
+    }
+	return 0;
+} */
+
+
+/*
+int	main()
+{
+	char	*string = "hola que tal estas";
+	char	**res;
+
+	res = ft_split(string, ' ');
+	
+	while (*res)
+	{
+		printf("%s\n", *res);
+		*res++;
+	}
+
+	return (0);
+}*/
