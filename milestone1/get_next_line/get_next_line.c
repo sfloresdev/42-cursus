@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 23:53:04 by seflores          #+#    #+#             */
-/*   Updated: 2025/11/10 22:07:04 by seflores         ###   ########.fr       */
+/*   Updated: 2025/11/12 17:47:02 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,31 @@
 
 static char *read_line(int fd, char *buffer)
 {
-	char	*tmp;
 	ssize_t	read_b;
+	char	*str;
 	
-	tmp = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	str = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	read_b = 1;
 	while (read_b != 0 && !ft_strchr(buffer, '\n'))
 	{
-		read_b = read(fd, tmp, BUFFER_SIZE);
+		read_b = read(fd, str, BUFFER_SIZE);
 		if (read_b == -1)
 		{
 			free(buffer);
-			free(tmp);
+			free(str);
 			return (NULL);
 		}
-		tmp[read_b] = '\0';
-		buffer = ft_strjoin();			
+		str[read_b] = '\0';
+		buffer = ft_strjoin(buffer, str);			
 	}
-	return ();
+	free(str);
+	return (buffer);
 }
-static char	n_line(char *buffer)
+static char	left(char *buffer)
 {
-	int		i;
 	char	*left;
+	int		i;
+	int		j;
 
 	i = 0;
 	while (buffer[i] && buffer[i] != '\n')
@@ -46,23 +48,22 @@ static char	n_line(char *buffer)
 		free(buffer);
 		return (NULL);
 	}
-	left = ft_calloc(ft_strlen(buffer) - i, sizeof(char));
-	i = 0;
-	while (buffer[i])
+	left = malloc((ft_strlen(buffer) - i) * sizeof(char));
+	j = 0;
+	while (buffer[++i])
 	{
-		left[i] = buffer[i];
-		i++;	
+		left[j] = buffer[i];
+		j++;
 	}
 	if (buffer[i] == '\n')
-		left[i] = '\n';
-	i++;
-	left[i] = '\0';
+		left[j] = '\n';
+	j++;
+	left[j] = '\0';
+	free(buffer);
 	return(left);
 }
 
-
-
-static char line(char *buffer)
+static char *get_line(char *buffer)
 {
 	int		i;
 	char 	*line;
@@ -72,7 +73,7 @@ static char line(char *buffer)
 		return(NULL);
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
-	line = ft_calloc(i + 1, sizeof(char));
+	line = malloc((i + 1) * sizeof(char));
 	i = 0;
 	while (buffer[i] && buffer[i] != '\n')
 	{
@@ -86,5 +87,15 @@ static char line(char *buffer)
 
 char	*get_next_line(int fd)
 {
-	
+	static char	*buffer;
+	char		*line;
+
+	if (BUFFER_SIZE <= 0 || fd < 0)
+		return (NULL);
+	buffer = read_line(fd, buffer);
+	if (!buffer)
+		return (NULL);
+	line = get_line(buffer);
+	buffer = left(buffer);
+	return (line);	
 }

@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 23:53:34 by seflores          #+#    #+#             */
-/*   Updated: 2025/11/10 00:10:09 by seflores         ###   ########.fr       */
+/*   Updated: 2025/11/12 17:59:30 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,31 @@ char	*ft_strchr(const char *str, int c)
 		str++;
 	}
 	return ((char *)str);
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	char	*string;
+	size_t	i;
+	size_t	j;
+	
+	if(!s1 || !s2)
+		return (NULL);
+	string = malloc((ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (!string)
+		return (NULL);
+	i = 0;
+	while(s1[i])
+	{
+		string[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while(s2[j])
+	{
+		string[i + j] = s2[j];
+		j++;
+	}
+	string[i + j] = '\0';
+	return (string);
 }
