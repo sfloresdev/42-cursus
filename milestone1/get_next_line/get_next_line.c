@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 23:53:04 by seflores          #+#    #+#             */
-/*   Updated: 2025/11/18 19:32:06 by seflores         ###   ########.fr       */
+/*   Updated: 2025/12/02 18:53:17 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*init_buffer(char *buffer, char *str)
+static char	*init_buffer(char *str)
 {
 	char	*buffer;
-	
+
 	buffer = malloc(1);
 	if (!buffer)
 	{
-		free(*str);
+		free(str);
 		return (NULL);
 	}
 	buffer[0] = '\0';
@@ -35,7 +35,7 @@ static char	*read_line(int fd, char *buffer)
 	read_b = 1;
 	if (!buffer)
 	{
-		buffer = init_buffer(buffer, str);
+		buffer = init_buffer(str);
 		if (!buffer)
 			return (NULL);
 	}
@@ -72,7 +72,10 @@ static char	*left(char *buffer)
 	i++;
 	left = malloc(((ft_strlen(buffer) - i) * sizeof(char)) + 1);
 	if (!left)
+	{
+		free(buffer);
 		return (NULL);
+	}
 	j = 0;
 	while (buffer[i])
 		left[j++] = buffer[i++];
@@ -92,6 +95,8 @@ static char	*get_line(char *buffer)
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
 	line = malloc((i + 2) * sizeof(char));
+	if (!line)
+		return (NULL);
 	i = 0;
 	while (buffer[i] && buffer[i] != '\n')
 	{
@@ -125,7 +130,6 @@ int	main(void)
 	int fd;
 	char *line;
 
-	// Abrimos el archivo en modo lectura
 	fd = open("test.txt", O_RDONLY);
 	if (fd < 0)
 	{
@@ -133,11 +137,10 @@ int	main(void)
 		return (1);
 	}
 
-	// Llamamos a get_next_line repetidamente hasta EOF
 	while ((line = get_next_line(fd)) != NULL)
 	{
 		printf("Línea leída: %s", line);
-		free(line); // Muy importante liberar la línea
+		free(line);
 	}
 
 	close(fd);
