@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 23:53:34 by seflores          #+#    #+#             */
-/*   Updated: 2025/11/20 21:14:36 by seflores         ###   ########.fr       */
+/*   Updated: 2025/12/03 17:23:44 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (NULL);
 	string = malloc((ft_strlen(s1) + ft_strlen(s2)) + 1);
 	if (!string)
+	{
+		free(s1);
 		return (NULL);
+	}
 	i = 0;
 	while (s1[i])
 	{
@@ -56,11 +59,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	}
 	j = 0;
 	while (s2[j])
-	{
-		string[i + j] = s2[j];
-		j++;
-	}
-	string[i + j] = '\0';
-	free(s1);
-	return (string);
+		string[i++] = s2[j++];
+	string[i] = '\0';
+	return (free(s1), string);
 }
