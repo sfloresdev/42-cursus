@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 23:53:04 by seflores          #+#    #+#             */
-/*   Updated: 2025/12/02 18:53:17 by seflores         ###   ########.fr       */
+/*   Updated: 2025/12/03 15:55:50 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,10 @@ static char	*get_line(char *buffer)
 		i++;
 	}
 	if (buffer[i] == '\n')
+	{
 		line[i] = '\n';
-	i++;
+		i++;
+	}
 	line[i] = '\0';
 	return (line);
 }
@@ -124,7 +126,7 @@ char	*get_next_line(int fd)
 	buffer = left(buffer);
 	return (line);
 }
-
+/*
 int	main(void)
 {
 	int fd;
@@ -145,4 +147,4 @@ int	main(void)
 
 	close(fd);
 	return (0);
-}
+}*/
