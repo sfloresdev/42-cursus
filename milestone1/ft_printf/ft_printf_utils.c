@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 18:07:37 by seflores          #+#    #+#             */
-/*   Updated: 2025/11/20 23:18:16 by seflores         ###   ########.fr       */
+/*   Updated: 2025/12/05 12:32:33 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putchar(char c, int *count)
 {
 	write(1, &c, 1);
-	*count++;
+	(*count)++;
 }
 
 void	ft_putnbr(int nbr, int *count)
@@ -66,18 +66,13 @@ void	ft_putstr(char *str, int *count)
 
 void	ft_putnbr_base(unsigned int nbr, char *base, int *count)
 {
-	long	number;
-	int		length;
+	unsigned int	number;
+	unsigned int	length;
 
 	length = ft_strlen(base);
 	if (length < 2)
 		return ;
 	number = nbr;
-	if (number < 0)
-	{
-		number *= -1;
-		ft_putchar('-', count);
-	}
 	if (number < length)
 		ft_putchar(base[number], count);
 	if (number >= length)
