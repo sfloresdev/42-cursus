@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:03:08 by seflores          #+#    #+#             */
-/*   Updated: 2025/12/06 23:28:04 by seflores         ###   ########.fr       */
+/*   Updated: 2025/12/06 23:41:56 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	ft_printf(char const *str, ...)
 		{
 			i++;
 			if (str[i] == '\0')
-				break;
+				break ;
 			printf_convert(str[i], ap, &count);
 		}
 		else
@@ -68,7 +68,7 @@ int	ft_printf(char const *str, ...)
 	va_end(ap);
 	return (count);
 }
-
+/*
 int	main(void)
 {
 	int hexa_decimal = 42;
@@ -184,4 +184,4 @@ int	main(void)
 	ft_printf("ft: Me gusta el porcentaje -> %%, mira  -> %%n %%24 \n");
 	
 	return (0);
-}
+}*/

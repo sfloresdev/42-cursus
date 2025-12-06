@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 11:53:40 by seflores          #+#    #+#             */
-/*   Updated: 2025/12/06 22:34:56 by seflores         ###   ########.fr       */
+/*   Updated: 2025/12/06 23:42:44 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putptr(unsigned long ptr, int *count)
 	ft_putchar(base[ptr % 16], count);
 }
 
-void 	print_pointer(unsigned long ptr, int *count)
+void	print_pointer(unsigned long ptr, int *count)
 {
 	if (!ptr)
 	{
