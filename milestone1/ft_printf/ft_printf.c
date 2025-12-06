@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:03:08 by seflores          #+#    #+#             */
-/*   Updated: 2025/12/05 12:31:38 by seflores         ###   ########.fr       */
+/*   Updated: 2025/12/06 22:38:33 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ void	printf_convert(const char c, va_list ap, int *count)
 	else if (c == 'X')
 		ft_putnbr_base(va_arg(ap, unsigned int), upper_hexa, count);
 	else if (c == 'p')
-	{
-		ft_putstr("0x", count);
-		ft_putptr(va_arg(ap, unsigned long), count);
-	}
+		print_pointer(va_arg(ap, unsigned long), count);
 }
 
 int	ft_printf(char const *str, ...)
@@ -69,11 +66,27 @@ int	ft_printf(char const *str, ...)
 int	main(void)
 {
 	int edad = 19;
+	int *null_pointer = NULL;
+	char *str = NULL;
 
-	printf("Hola buenos dias me llamo Sergio");
-	ft_printf("Hola buenos dias me llamo Sergio");
 
-	printf("Hola tengo %d agnos", edad);
-	ft_printf("Hola tengo %d agnos", edad);
+	printf("original: El valor de un puntero nulo se ve asi %p\n", null_pointer);
+	ft_printf("ft: El valor de un puntero nulo se ve asi %p\n", null_pointer);
+
+	printf("-------\n");
+
+	printf("original: Hola buenos dias me llamo Sergio\n");
+	ft_printf("ft: Hola buenos dias me llamo Sergio\n");
+
+	printf("-------\n");
+	
+	printf("original: Hola tengo %d agnos\n", edad);
+	ft_printf("ft: Hola tengo %d agnos\n", edad);
+
+	ft_printf("-------\n");
+
+	printf("original: Asi se ve una string vacia = %s\n", str);
+	ft_printf("ft: Asi se ve una string vacia = %s\n", str);
+
 	return (0);
 }

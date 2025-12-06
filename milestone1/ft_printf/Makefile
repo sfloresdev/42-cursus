@@ -5,14 +5,14 @@ SRC = ft_printf.c \
       ft_printf_utils.c \
 	  ft_printf_pointer.c
 	  
-OBJS = $(SRC.c=.o)
+OBJS = $(SRC:.c=.o)
 
-all: $(NAME);
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-%o: %.c ft_printf.h
+%.o: %.c ft_printf.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
