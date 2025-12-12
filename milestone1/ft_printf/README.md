@@ -43,8 +43,6 @@ El proyecto se estructura en tres componentes principales:
 
 ### Justificación del algoritmo
 
-**Parser secuencial simple**: Se eligió por eficiencia O(n), simplicidad de código y bajo uso de memoria. No requiere estructuras auxiliares complejas.
-
 **Escritura directa sin buffer**: A diferencia de implementaciones que acumulan salida en un buffer, esta escribe directamente con `write()`. Sacrifica un poco de rendimiento a cambio de no tener límites de tamaño y menor complejidad en gestión de memoria.
 
 **Conversión recursiva**: Para números y hexadecimales se usa recursión, evitando buffers temporales y simplificando la lógica de conversión.
