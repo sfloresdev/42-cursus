@@ -59,7 +59,7 @@ El proyecto se estructura en tres componentes principales:
 
 ### Uso de IA
 
-**Claude (Anthropic)** se utilizó para:
+Se utilizó para:
 - **Investigación**: Aclarar conceptos sobre `va_list`.
 - **Debugging**: Identificar errores en conversión hexadecimal y manejo de punteros nulos
 - **Optimización**: Sugerencias para reducir llamadas a write y simplificar condicionales
