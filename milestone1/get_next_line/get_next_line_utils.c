@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 23:53:34 by seflores          #+#    #+#             */
-/*   Updated: 2025/12/03 17:23:44 by seflores         ###   ########.fr       */
+/*   Updated: 2025/12/16 16:23:21 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

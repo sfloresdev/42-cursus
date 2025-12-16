@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 23:53:04 by seflores          #+#    #+#             */
-/*   Updated: 2025/12/03 17:11:47 by seflores         ###   ########.fr       */
+/*   Updated: 2025/12/16 16:52:09 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,22 @@ static char	*read_line(int fd, char *buffer)
 	char	*str;
 
 	str = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	read_b = 1;
 	if (!buffer)
 	{
 		buffer = init_buffer(str);
 		if (!buffer)
-			return (NULL);
+			return (free(str), NULL);
 	}
+	read_b = 1;
 	while (read_b != 0 && !ft_strchr(buffer, '\n'))
 	{
 		read_b = read(fd, str, BUFFER_SIZE);
 		if (read_b == -1)
-		{
-			free(str);
-			free(buffer);
-			return (NULL);
-		}
+			return (free(str), free(buffer), NULL);
 		str[read_b] = '\0';
 		buffer = ft_strjoin(buffer, str);
+		if (!buffer)
+			return (free(str), NULL);
 	}
 	free(str);
 	return (buffer);
@@ -94,7 +92,7 @@ static char	*get_line(char *buffer)
 		return (NULL);
 	while (buffer[i] && buffer[i] != '\n')
 		i++;
-	line = malloc((i + 2) * sizeof(char));
+	line = malloc((i + (buffer[i] == '\n') + 1) * sizeof(char));
 	if (!line)
 		return (NULL);
 	i = 0;
@@ -104,10 +102,7 @@ static char	*get_line(char *buffer)
 		i++;
 	}
 	if (buffer[i] == '\n')
-	{
-		line[i] = '\n';
-		i++;
-	}
+		line[i++] = '\n';
 	line[i] = '\0';
 	return (line);
 }
