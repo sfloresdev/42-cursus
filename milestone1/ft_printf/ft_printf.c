@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:03:08 by seflores          #+#    #+#             */
-/*   Updated: 2025/12/06 23:41:56 by seflores         ###   ########.fr       */
+/*   Updated: 2025/12/12 12:38:51 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ void	printf_convert(const char c, va_list ap, int *count)
 	else if (c == 'p')
 		print_pointer(va_arg(ap, unsigned long), count);
 	else
-	{
 		ft_putchar(c, count);
-	}
 }
 
 int	ft_printf(char const *str, ...)
@@ -68,8 +66,8 @@ int	ft_printf(char const *str, ...)
 	va_end(ap);
 	return (count);
 }
-/*
-int	main(void)
+
+/* int	main(void)
 {
 	int hexa_decimal = 42;
 	int negativo = -23;
@@ -184,4 +182,4 @@ int	main(void)
 	ft_printf("ft: Me gusta el porcentaje -> %%, mira  -> %%n %%24 \n");
 	
 	return (0);
-}*/
+} */
