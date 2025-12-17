@@ -39,7 +39,7 @@ El proyecto se estructura en tres componentes principales:
 
 **Gestión**: Usa `va_list`, `va_start`, `va_arg` y `va_end` de `<stdarg.h>` para manejar argumentos variables.
 
-**Funciones**: Cada conversor tiene su función individual (`ft_print_char`, `ft_print_str`, `ft_print_ptr`, `ft_print_nbr`, `ft_print_unsigned`, `ft_print_hex`), siguiendo el principio de responsabilidad única para mayor modularidad y testabilidad.
+**Funciones**: Cada conversor tiene su función individual (`ft_print_char`, `ft_print_str`, `ft_print_ptr`, `ft_print_nbr`, `ft_print_unsigned`, `ft_print_hex`).
 
 ### Justificación del algoritmo
 
