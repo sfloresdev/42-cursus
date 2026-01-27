@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-class Plant: 
+class Plant:
     def __init__(self, name: str, height: int, plant_age: int) -> None:
         self.name = name
         self.height = height
         self.plant_age = plant_age
         self.week_day = 0
-    
+
     def grow(self):
         if (self.week_day >= 7):
             self.week_day = 0
