@@ -6,74 +6,114 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:52:50 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/22 18:08:56 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/28 15:51:43 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-Programa principal que parsea los argumentos de consola
-*/
-void	ft_args_parser(void)
-{
-}
-
-// Verificar que no esta repetido positivo o negativo
-int	ft_has_duplicates(int *numbers, int count)
+static void	ft_free_matrix(char **argv)
 {
 	int	i;
-	int	j;
 
+	if (!argv)
+		return ;
 	i = 0;
-	while (i < count)
+	while (argv[i])
 	{
-		j = i + 1;
-		while (j < count)
-		{
-			if (numbers[i] == numbers[j])
-				return (1);
-			j++;
-		}
+		free(argv[i]);
 		i++;
+	}
+	free(argv);
+}
+
+/*
+Verificar que no esta repetido positivo o negativo
+*/
+int	ft_check_duplicates(t_stack *a, int n)
+{
+	if (!a)
+		return (0);
+	while (a)
+	{
+		if (a->value == n)
+			return (1);
+		a = a->next;
 	}
 	return (0);
 }
 
 /*
-// Verificar caso de ir entre comillas
-int	ft_check_quotes(void) */
-
-/*
 Atoi mejorado, pensado para aceptar numeros negativos
 */
-int	ft_atoi_neg(char *str)
+long	ft_atol(char *str, t_stack **stack)
 {
 	long	result;
 	int		sign;
+	int		i;
 
 	result = 0;
 	sign = 1;
-	while ((*str >= 9 && *str <= 13) || (*str == 32))
-		*str++;
-	if (*str == 45 || *str == 43)
+	i = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
+		i++;
+	if (str[i] == 45 || str[i] == 43)
 	{
-		if (*str == 45)
+		if (str[i] == 45)
 			sign = -1;
-		str++;
+		i++;
 	}
-	while (ft_isdigit(*str))
+	while (str[i] && ft_isdigit(str[i]))
 	{
-		result = result * 10 + (*str - 48);
-		str++;
+		result = result * 10 + (str[i] - 48);
+		i++;
 	}
-	if (ft_isalpha(*str))
-		ft_printf("Error: Not a valid type");
+	if (str[i] != '\0')
+		ft_error_exit(stack, NULL);
+	if ((result * sign) > 2147483647 || (result * sign) < -2147483648)
+		ft_error_exit(stack, NULL);
 	return (result * sign);
 }
 
-int	ft_int_check(char *str)
+static void	ft_process_args(char **args, t_stack **stack_a)
 {
-	if (ft_isdigit)
-		return (0);
+	long	n;
+	int		i;
+
+	i = 0;
+	while (args[i])
+	{
+		n = ft_atol(args[i], stack_a);
+		if (ft_check_duplicates(*stack_a, (int)n))
+		{
+			ft_free_matrix(args);
+			ft_error_exit(stack_a, NULL);
+		}
+		ft_stack_add_back(stack_a, ft_stack_new((int)n));
+		i++;
+	}
+}
+
+/*
+Programa principal que parsea los argumentos de consola
+*/
+void	ft_parse_args(int argc, char **argv, t_stack **stack_a)
+{
+	int		i;
+	char	**args;
+
+	i = 1;
+	while (i < argc)
+	{
+		args = ft_split(argv[i], ' ');
+		if (!args || !*args)
+		{
+			if (args)
+				ft_free_matrix(args);
+			ft_error_exit(stack_a, NULL);
+		}
+		ft_process_args(args, stack_a);
+		ft_free_matrix(args);
+		i++;
+	}
 }
