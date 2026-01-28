@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:52:50 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/28 15:51:43 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/28 20:51:04 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,14 @@ long	ft_atol(char *str, t_stack **stack)
 			sign = -1;
 		i++;
 	}
+	if (!ft_isdigit(str[i]))
+		ft_error_exit(stack, NULL);
 	while (str[i] && ft_isdigit(str[i]))
 	{
 		result = result * 10 + (str[i] - 48);
 		i++;
 	}
-	if (str[i] != '\0')
-		ft_error_exit(stack, NULL);
-	if ((result * sign) > 2147483647 || (result * sign) < -2147483648)
+	if (str[i] != '\0' || result * sign > INT_MAX || result * sign < INT_MIN)
 		ft_error_exit(stack, NULL);
 	return (result * sign);
 }

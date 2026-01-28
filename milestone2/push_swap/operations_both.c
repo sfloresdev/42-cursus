@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 18:21:59 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/28 18:58:26 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/28 19:51:49 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,6 @@ static void	rrr_stack(t_stack **stack)
 
 void	rrr(t_stack **a, t_stack **b)
 {
-	t_stack	*last;
-	t_stack	*penultimate;
-
 	if (a && *a && (*a)->next)
 		rrr_stack(a);
 	if (b && *b && (*b)->next)

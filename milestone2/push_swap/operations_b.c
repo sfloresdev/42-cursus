@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 17:59:06 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/28 18:20:00 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/28 19:43:34 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,13 @@ The first element becomes the last one.
 */
 void	rb(t_stack **b)
 {
-	t_stack *tmp;
-	t_stack *last;
+	t_stack	*tmp;
+	t_stack	*last;
 
 	if (!b || !*b || !(*b)->next)
 		return ;
-
 	tmp = *b;
 	*b = (*b)->next;
-
 	tmp->next = NULL;
 	last = ft_stack_last(*b);
 	last->next = tmp;
@@ -65,24 +63,22 @@ void	rb(t_stack **b)
 Shift down all elements of stack b by 1.
 The last element becomes the first one.
 */
-void rrb(t_stack **b)
+void	rrb(t_stack **b)
 {
-    t_stack *last;
-    t_stack *penultimate;
+	t_stack	*last;
+	t_stack	*penultimate;
 
-    if (!b || !*b || !(*b)->next)
-        return ;
-    
-    last = *b;
-    penultimate = NULL;
-    
-    while (last->next)
-    {
-        penultimate = last;
-        last = last->next;
-    }
-    penultimate->next = NULL;
-    last->next = *b;
-    *b = last;
-    ft_printf("rrb\n");
+	if (!b || !*b || !(*b)->next)
+		return ;
+	last = *b;
+	penultimate = NULL;
+	while (last->next)
+	{
+		penultimate = last;
+		last = last->next;
+	}
+	penultimate->next = NULL;
+	last->next = *b;
+	*b = last;
+	ft_printf("rrb\n");
 }

@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 12:14:01 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/28 13:43:49 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/28 19:40:47 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,10 @@ void	free_stack(t_stack **stack)
 
 void	ft_error_exit(t_stack **a, t_stack **b)
 {
-	if (a && *a)
-		free_stack(a);
-	if (b && *b)
-		;
-	free_stack(b);
-	ft_printf("Error\n");
-	exit(1);
+    if (a && *a)
+        free_stack(a);
+    if (b && *b)
+        free_stack(b);
+    ft_printf("Error\n");
+    exit(1);
 }

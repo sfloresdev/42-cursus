@@ -10,7 +10,14 @@ LIBFT = $(LIBFT_DIR)/libft.a
 FTPRINTF = $(FTPRINTF_DIR)/libftprintf.a
 
 SRC = push_swap.c \
-	  parser.c
+	  parser.c \
+	  utils.c \
+	  stack_utils.c \
+	  operations_a.c \
+	  operations_b.c \
+	  operations_both.c \
+	  algo/sort_small.c \
+	  algo/redix.c
 
 OBJ = $(SRC:.c=.o)
 

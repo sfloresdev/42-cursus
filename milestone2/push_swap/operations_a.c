@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 16:05:40 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/28 18:00:39 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/28 19:36:02 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,24 +61,20 @@ void	ra(t_stack **a)
 
 void	rra(t_stack **a)
 {
-	t_stack *last;
-	t_stack *penultimate;
+	t_stack		*last;
+	t_stack		*penultimate;
 
 	if (!a || !(*a) || !(*a)->next)
 		return ;
-
 	last = *a;
 	penultimate = NULL;
-
 	while (last->next)
 	{
 		penultimate = last;
 		last = last->next;
 	}
-
 	penultimate->next = NULL;
 	last->next = *a;
 	*a = last;
-
 	ft_printf("rra\n");
 }

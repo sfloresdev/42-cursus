@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 13:42:31 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/28 16:12:49 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/28 21:27:18 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ t_stack	*ft_stack_new(int value)
 {
 	t_stack	*new;
 
-	new = malloc(sizeof(t_stack));
+	new = ft_calloc(1, sizeof(t_stack));
 	if (!new)
 		return (NULL);
 	new->value = value;
-	new->index = -1;
-	new->next = NULL;
 	return (new);
 }
 
@@ -51,15 +49,35 @@ void	ft_stack_add_back(t_stack **stack, t_stack *new_node)
 
 int	ft_stack_size(t_stack *stack)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	if (!stack)
-		return ;
 	while (stack)
 	{
 		stack = stack->next;
 		i++;
 	}
 	return (i);
+}
+
+void	ft_index_stack(t_stack *stack)
+{
+	t_stack *current;
+	t_stack *check;
+	int times;
+
+	current = stack;
+	while (current)
+	{
+		times = 0;
+		check = stack;
+		while (check)
+		{
+			if (check->value < current->value)
+				times++;
+			check = check->next;
+		}
+		current->index = times;
+		current = current->next;
+	}
 }
