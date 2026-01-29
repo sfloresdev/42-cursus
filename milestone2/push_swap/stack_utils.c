@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 13:42:31 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/28 21:27:18 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/30 00:10:06 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ int	ft_stack_size(t_stack *stack)
 
 void	ft_index_stack(t_stack *stack)
 {
-	t_stack *current;
-	t_stack *check;
-	int times;
+	int		times;
+	t_stack	*current;
+	t_stack	*check;
 
 	current = stack;
 	while (current)

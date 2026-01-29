@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:52:50 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/28 20:51:04 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/29 23:50:36 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_check_duplicates(t_stack *a, int n)
 /*
 Atoi mejorado, pensado para aceptar numeros negativos
 */
-long	ft_atol(char *str, t_stack **stack)
+long	ft_atol(char *str, t_stack **stack, char **args)
 {
 	long	result;
 	int		sign;
@@ -64,14 +64,20 @@ long	ft_atol(char *str, t_stack **stack)
 		i++;
 	}
 	if (!ft_isdigit(str[i]))
+	{
+		ft_free_matrix(args);
 		ft_error_exit(stack, NULL);
+	}
 	while (str[i] && ft_isdigit(str[i]))
 	{
 		result = result * 10 + (str[i] - 48);
 		i++;
 	}
 	if (str[i] != '\0' || result * sign > INT_MAX || result * sign < INT_MIN)
+	{
+		ft_free_matrix(args);
 		ft_error_exit(stack, NULL);
+	}
 	return (result * sign);
 }
 
@@ -83,7 +89,7 @@ static void	ft_process_args(char **args, t_stack **stack_a)
 	i = 0;
 	while (args[i])
 	{
-		n = ft_atol(args[i], stack_a);
+		n = ft_atol(args[i], stack_a, args);
 		if (ft_check_duplicates(*stack_a, (int)n))
 		{
 			ft_free_matrix(args);

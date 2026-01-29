@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:49:05 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/29 10:08:39 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/29 23:51:25 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void				ft_index_stack(t_stack *stack);
 
 /* Parser - Validaciones */
 int					ft_check_duplicates(t_stack *a, int n);
-long				ft_atol(char *str, t_stack **stack);
+long				ft_atol(char *str, t_stack **stack, char **args);
 void				ft_parse_args(int argc, char **argv, t_stack **stack_a);
 
 /* utils - Limpieza */

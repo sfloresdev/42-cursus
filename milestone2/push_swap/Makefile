@@ -17,7 +17,7 @@ SRC = push_swap.c \
 	  operations/operations_b.c \
 	  operations/operations_both.c \
 	  algo/sort_small.c \
-	  algo/redix.c
+	  algo/radix.c
 
 OBJ = $(SRC:.c=.o)
 

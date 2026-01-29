@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 19:11:24 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/28 21:35:03 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/30 00:05:18 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_find_highest(t_stack *stack)
 
 	if (!stack)
 		return (0);
-    max = stack->value;
+	max = stack->value;
 	while (stack)
 	{
 		if (stack->value > max)

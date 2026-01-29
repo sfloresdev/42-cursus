@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 22:08:43 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/28 22:33:54 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/30 00:05:38 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_radix_sort(t_stack **stack_a, t_stack **stack_b)
 			j++;
 		}
 		while (ft_stack_size(*stack_b) != 0)
-            pa(stack_a, stack_b);
-        i++;
+			pa(stack_a, stack_b);
+		i++;
 	}
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:05:06 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/29 20:47:30 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/30 00:07:13 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void sort_stack(t_stack **stack_a, t_stack **stack_b, int size)
+static void	sort_stack(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	if (size == 2)
 	{
