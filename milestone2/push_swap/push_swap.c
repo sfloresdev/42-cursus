@@ -6,11 +6,24 @@
 /*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:05:06 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/29 10:15:59 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/29 20:47:30 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void sort_stack(t_stack **stack_a, t_stack **stack_b, int size)
+{
+	if (size == 2)
+	{
+		if ((*stack_a)->value > (*stack_a)->next->value)
+			sa(stack_a);
+	}
+	else if (size == 3)
+		sort_three(stack_a);
+	else if (size >= 4)
+		ft_radix_sort(stack_a, stack_b);
+}
 
 int	main(int argc, char **argv)
 {
@@ -30,15 +43,7 @@ int	main(int argc, char **argv)
 	}
 	ft_index_stack(stack_a);
 	size = ft_stack_size(stack_a);
-	if (size == 2)
-	{
-		if (stack_a->value > stack_a->next->value)
-			sa(&stack_a);
-	}
-	else if (size == 3)
-		sort_three(&stack_a);
-	else if (size >= 4)
-		ft_radix_sort(&stack_a, &stack_b);
+	sort_stack(&stack_a, &stack_b, size);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
