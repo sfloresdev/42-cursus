@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   operations_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 16:05:40 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/28 19:36:02 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/29 09:54:29 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 /*
 Swap the first 2 elements at the top of stack a.

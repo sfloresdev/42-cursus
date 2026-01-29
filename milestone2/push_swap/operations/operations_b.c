@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   operations_b.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 17:59:06 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/28 19:43:34 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/29 09:45:10 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	sb(t_stack **b)
 {
