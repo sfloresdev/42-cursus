@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   redix.c                                            :+:      :+:    :+:   */
+/*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 22:08:43 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/30 00:05:38 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/30 10:54:31 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_radix_sort(t_stack **stack_a, t_stack **stack_b)
 				pb(stack_b, stack_a);
 			j++;
 		}
-		while (ft_stack_size(*stack_b) != 0)
+		while (*stack_b)
 			pa(stack_a, stack_b);
 		i++;
 	}

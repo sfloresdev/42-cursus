@@ -11,6 +11,7 @@ FTPRINTF = $(FTPRINTF_DIR)/libftprintf.a
 
 SRC = push_swap.c \
 	  parser.c \
+	  parser_utils.c \
 	  utils.c \
 	  stack_utils.c \
 	  operations/operations_a.c \
@@ -36,7 +37,7 @@ $(NAME): $(LIBFT) $(FTPRINTF) $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(FTPRINTF) -o $(NAME)
 
 %.o: %.c push_swap.h
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)

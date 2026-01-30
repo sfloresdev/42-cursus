@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:52:50 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/29 23:50:36 by seflores         ###   ########.fr       */
+/*   Updated: 2026/01/30 12:13:04 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_free_matrix(char **argv)
+void	ft_free_matrix(char **argv)
 {
 	int	i;
 
@@ -50,34 +50,26 @@ long	ft_atol(char *str, t_stack **stack, char **args)
 {
 	long	result;
 	int		sign;
-	int		i;
 
 	result = 0;
 	sign = 1;
-	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
-		i++;
-	if (str[i] == 45 || str[i] == 43)
+	while ((*str >= 9 && *str <= 13) || (*str == 32))
+		str++;
+	if ( *str == 45 || *str == 43)
 	{
-		if (str[i] == 45)
+		if (*str == 45)
 			sign = -1;
-		i++;
+		str++;
 	}
-	if (!ft_isdigit(str[i]))
+	if (!ft_isdigit(*str))
+		ft_free_error(stack, args);
+	while (*str && ft_isdigit(*str))
 	{
-		ft_free_matrix(args);
-		ft_error_exit(stack, NULL);
+		result = result * 10 + (*str - 48);
+		str++;
 	}
-	while (str[i] && ft_isdigit(str[i]))
-	{
-		result = result * 10 + (str[i] - 48);
-		i++;
-	}
-	if (str[i] != '\0' || result * sign > INT_MAX || result * sign < INT_MIN)
-	{
-		ft_free_matrix(args);
-		ft_error_exit(stack, NULL);
-	}
+	if (*str != '\0' || result * sign > INT_MAX || result * sign < INT_MIN)
+		ft_free_error(stack, args);
 	return (result * sign);
 }
 
