@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:05:06 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/30 00:07:13 by seflores         ###   ########.fr       */
+/*   Updated: 2026/02/01 19:39:57 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ static void	sort_stack(t_stack **stack_a, t_stack **stack_b, int size)
 	}
 	else if (size == 3)
 		sort_three(stack_a);
-	else if (size >= 4)
+	else if (size == 4)
+		sort_five(stack_a, stack_b);
+	else if (size == 5)
+		sort_five(stack_a, stack_b);
+	else
 		ft_radix_sort(stack_a, stack_b);
 }
 

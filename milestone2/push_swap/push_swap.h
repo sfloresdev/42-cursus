@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:49:05 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/30 12:14:15 by seflores         ###   ########.fr       */
+/*   Updated: 2026/02/01 19:56:21 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void				rrr(t_stack **a, t_stack **b);
 
 /* Algo - Algoritmos de ordenacion */
 void				sort_three(t_stack **a);
+void				sort_five(t_stack **stack_a, t_stack **stack_b);
 void				ft_radix_sort(t_stack **stack_a, t_stack **stack_b);
 
 #endif
