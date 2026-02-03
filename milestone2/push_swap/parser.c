@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seflores <seflores@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 18:52:50 by seflores          #+#    #+#             */
-/*   Updated: 2026/01/30 12:13:04 by seflores         ###   ########.fr       */
+/*   Updated: 2026/02/03 16:50:33 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ long	ft_atol(char *str, t_stack **stack, char **args)
 	sign = 1;
 	while ((*str >= 9 && *str <= 13) || (*str == 32))
 		str++;
-	if ( *str == 45 || *str == 43)
+	if (*str == 45 || *str == 43)
 	{
 		if (*str == 45)
 			sign = -1;

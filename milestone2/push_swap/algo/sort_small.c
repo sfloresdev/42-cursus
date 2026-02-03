@@ -6,7 +6,7 @@
 /*   By: seflores <seflores@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 19:11:24 by seflores          #+#    #+#             */
-/*   Updated: 2026/02/01 19:56:04 by seflores         ###   ########.fr       */
+/*   Updated: 2026/02/03 16:50:14 by seflores         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ static int	get_min_pos(t_stack *stack)
 	}
 	return (min_pos);
 }
+
 static void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 {
 	int	min_pos;
@@ -72,7 +73,7 @@ static void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 			min_pos--;
 		}
 	}
-	pb(stack_a, stack_b);
+	pb(stack_b, stack_a);
 }
 
 void	sort_three(t_stack **a)
@@ -92,7 +93,7 @@ void	sort_three(t_stack **a)
 
 void	sort_five(t_stack **stack_a, t_stack **stack_b)
 {
-	int size;
+	int		size;
 
 	size = ft_stack_size(*stack_a);
 	while (size > 3)
