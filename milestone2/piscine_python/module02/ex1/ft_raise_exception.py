@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 
 def input_temperature(temp_str: str) -> int:
+    num = int(temp_str)
+    if num < 0:
+        raise Exception(f"{num}ºC is too cold for plants (min 0º)")
+    if num > 40:
+        raise Exception(f"{num}ºC is too hot for plants (max 40º)")
     return int(temp_str)
 
 
 def test_temperature() -> None:
-    print("=== Garden Temperature ===\n")
+    print("=== Garden Temperature Checker===\n")
 
-    test_cases = ["25", "abc"]
+    test_cases = ["25", "abc", "100", "-50"]
 
     for data in test_cases:
         print(f"Input data is '{data}'")
