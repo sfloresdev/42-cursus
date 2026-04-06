@@ -10,40 +10,49 @@ Vamos a:
 - Calcular distancias usando la formula euclidiana 3D:
   sqrt((x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2)
 """
-import sys
 import math
 
-# a malas hacemos un x= sys.argv[1], y = sys.argv[2], etc...
-# porque nuestro programa no va a recbir mas de 3 argumentos
+
+def get_player_pos() -> tuple[float, float, float]:
+    while True:
+        line: str = input("Enter new coordinates as floats in format 'x,y,z':")
+        parts = line.split(',')
+        if len(parts) != 3:
+            print("Invalid syntax")
+            continue
+        try:
+            x = float(parts[0])
+            y = float(parts[1])
+            z = float(parts[2])
+            return (x, y, z)
+        except ValueError as e:
+            for p in parts:
+                try:
+                    float(p)
+                except ValueError:
+                    print(f"Error on parameter {p} : {e}")
 
 
-def coordinate_system():
-    print("=== Game Coordinate System ===")
-    coordinates = command_data()
-    print(f"Position created {coordinates}")
-    position = tuple(coordinates)
-    x, y, z = position
-    distance = float(math.sqrt(x**2 + y**2 + z**2))
-    print(f"Distance between (0, 0, 0) and ({x}, {y}, {z}): {distance}")
-
-
-def command_data() -> list:
-    arguments = len(sys.argv) - 1
-    if arguments == 3:
-        raw_data = []
-        print("Parsing coordinates:", end="")
-        for data in sys.argv[1:]:
-            try:
-                points = int(data)
-                print(f" {points}", end="")
-                raw_data.append(points)
-            except ValueError:
-                print("Parsing Error: invalid literal for int()")
-    else:
-        raise ValueError("Not enough arguments provided")
-    print("")
-    return raw_data
+def calculate_distance(pos1: tuple[float, float, float],
+                       pos2: tuple[float, float, float]) -> float:
+    return math.sqrt(
+        (pos2[0] - pos1[0])**2 +
+        (pos2[1] - pos1[1])**2 +
+        (pos2[2] - pos1[2])**2
+    )
 
 
 if __name__ == "__main__":
-    coordinate_system()
+    print("=== Game Coordinate System ===")
+    print("\nGet a first set of coordinates")
+    position1 = get_player_pos()
+    print(f"Got a first tuple: {position1}")
+    print(f"It includes: X={position1[0]}, Y={position1[1]}, Z={position1[2]}")
+    dist_to_center: float = calculate_distance(position1, (0.0, 0.0, 0.0))
+    print(f"Distance to center {round(dist_to_center, 4)}")
+
+    print("\nGet a second set of coordinates")
+    position2 = get_player_pos()
+    dist_to_pos: float = calculate_distance(position1, position2)
+    print("Distance between the 2 sets of coordinates: ", end="")
+    print(f"{round(dist_to_pos, 4)}")

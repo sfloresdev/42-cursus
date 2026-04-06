@@ -19,9 +19,10 @@ def score_analytics():
                 points = int(score)
                 scores.append(points)
             except ValueError:
-                print("Caught ValueError: invalidad literal for int()\n")
+                print(f"Invalid parameter '{score}'")
         if not scores:
-            print("No scores were processed")
+            print("No scores provided. Usage: python3", end="")
+            print(" ft_score_analytics.py <score1> <score2> ...")
             return
         print(f"Scores processed: {scores}")
         total_scores = sum(scores)
