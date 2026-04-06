@@ -43,24 +43,20 @@ class SecurePlant:
 if __name__ == "__main__":
     print("=== Garden Security System")
 
-    # 1. Prueba de inicialización (Debería imprimir
-    print("\n--- Paso 1: Creando planta con datos válidos ---")
+    # 1
+    print("\nCreando planta con datos validos")
     rose = SecurePlant("Rose", 25, 30)
     print(f"Plant created: {rose.name}")
-
-    # 2. Prueba de visualización inicial
-    print("\n--- Paso 2: Estado inicial ---")
+    print("\n--- Estado inicial ---")
     rose.get_info()
 
-    # 3. Prueba de actualización válida
-    print("\n--- Paso 3: Actualización válida ---")
+    # 2
+    print("\n--- Actualización ---")
     rose.set_height(35)
+    print("\nIntento datos erroneos")
+    rose.set_height(-10)
+    rose.set_age(-5)
 
-    # 4. Prueba de seguridad (Valores negativos)
-    print("\nPaso 4: Intento de corrupción de datos (Valores negativos)")
-    rose.set_height(-10)  # Debería mostrar ERROR/REJECTED
-    rose.set_age(-5)      # Debería mostrar ERROR/REJECTED
-
-    # 5. Verificación final (Los valores no deben haber cambiado )
-    print("\n--- Paso 5: Estado final (Verificación de integridad) ---")
+    # 3
+    print("\n--- Estado final ---")
     rose.get_info()

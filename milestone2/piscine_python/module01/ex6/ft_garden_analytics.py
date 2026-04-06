@@ -35,10 +35,6 @@ class Garden:
         self.user = user
         self._n_plants = 0
         self.total_growth = 0
-
-    
-    def add_plant(name: str,):
-        print("gola")
              
 
 

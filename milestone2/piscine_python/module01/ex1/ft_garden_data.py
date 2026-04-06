@@ -19,7 +19,7 @@ if __name__ == "__main__":
     p1 = Plant("Sunflower", 80, 45)
     p2 = Plant("Cactus", 15, 120)
 
-    print("Garden Plant Registry")
+    print("=== Garden Plant Registry ===")
     p.info()
     p1.info()
     p2.info()

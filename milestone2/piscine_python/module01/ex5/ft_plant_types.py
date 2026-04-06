@@ -20,7 +20,7 @@ class Flower(Plant):
         self.color = color
 
     def bloom(self):
-        print(f" {self.name} is blooming beautifully")
+        print(f"{self.name} is blooming beautifully")
 
     def info(self):
         print(f"{self.name} (Flower): {self.height}cm, ", end="")
@@ -52,3 +52,20 @@ class Vegetable(Plant):
         print(f"{self.name} (Vegetable): {self.height}cm, ", end="")
         print(f"{self.age} days old, {self.harvest_season} harvest")
         print(f"{self.name} is rich in {self.nutritional_value}")
+
+
+def plant_types():
+    print("=== Garden Plant Types ===\n")
+    f = Flower("Rose", 25, 30, "red")
+    t = Tree("Oak", 500, 1825, 50)
+    v = Vegetable("Tomato", 80, 90, "summer", "vitamin C")
+    f.info()
+    f.bloom()
+    print("")
+    t.info()
+    t.produce_shade()
+    print("")
+    v.info()
+
+
+plant_types()

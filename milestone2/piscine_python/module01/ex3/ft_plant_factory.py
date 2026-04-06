@@ -12,35 +12,29 @@ class Plant:
         self.height = height
         self.plant_age = plant_age
 
-    def grow(self, size: int = 1):
+    def grow(self, size: int = 1) -> None:
         self.height += size
 
-    def age(self, days: int = 1):
+    def age(self, days: int = 1) -> None:
         self.plant_age += days
 
-    def get_info(self):
-        print(f"{self.name}: {self.height}cm, {self.plant_age} days old")
+    def show(self) -> None:
+        print(f"{self.name}: {round(self.height, 1)}cm", end="")
+        print(f", {self.plant_age} days old")
 
 
-def plant_factory():
+if __name__ == "__main__":
     print("=== Plant Factory Output ===")
-
     plants_data = [
-        {"name": "Rose", "height": 25, "age": 30},
-        {"name": "Oak", "height": 200, "age": 365},
-        {"name": "Cactus", "height": 5, "age": 90},
-        {"name": "Sunflower", "height": 80, "age": 45},
-        {"name": "Fern", "height": 15, "age": 120}
+        ("Rose", 25.0, 30),
+        ("Oak", 200.0, 365),
+        ("Cactus", 5.0, 90),
+        ("Sunflower", 80.0, 45),
+        ("Fern", 15.0, 120)
     ]
-    plants_created = []
-    plants_count = 0
-    for plant in plants_data:
-        n_plant = Plant(plant['name'], plant['height'], plant['age'])
-        plants_created.append(n_plant)
+
+    plants = [Plant(name, h, a) for name, h, a in plants_data]
+
+    for plant in plants:
         print("Created: ", end="")
-        print(f"{n_plant.name} ({n_plant.height},{n_plant.plant_age})")
-        plants_count += 1
-    print(f"\nTotal plants created: {plants_count}")
-
-
-plant_factory()
+        plant.show()
