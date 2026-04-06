@@ -6,12 +6,12 @@ Data transformation over time
 
 
 class Plant:
-    def __init__(self, name: str, height: int, plant_age: int) -> None:
+    def __init__(self, name: str, height: float, plant_age: int) -> None:
         self.name = name
         self.height = height
         self.plant_age = plant_age
 
-    def grow(self, size: int = 0.8):
+    def grow(self, size: float = 0.8):
         self.height += size
 
     def age(self, days: int = 1):
@@ -24,7 +24,7 @@ class Plant:
 
 p = Plant("Rose", 25, 30)
 
-initial_height: int = p.height
+initial_height: float = p.height
 
 for i in range(1, 8):
     print(f"=== Day {i} ===")
@@ -32,5 +32,5 @@ for i in range(1, 8):
     p.grow()
     p.get_info()
 
-total_growth: int = p.height - initial_height
+total_growth: float = p.height - initial_height
 print(f"Growth this week: {round(total_growth, 1)}")

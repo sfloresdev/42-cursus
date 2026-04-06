@@ -6,57 +6,53 @@ mala ingesta de datos (Validación)
 """
 
 
-class SecurePlant:
-    def __init__(self, name: str, height: int, age: int) -> None:
+class Plant:
+    def __init__(self, name: str, height: float, age: int) -> None:
         self.name = name
-        self._height = 0
+        self._height = 0.0
         self._age = 0
+
         self.set_age(age)
         self.set_height(height)
+        print("Plant created: ", end="")
+        self.get_info()
 
     def set_age(self, days: int) -> None:
         if days < 0:
-            print("ERROR: Cannot set days less than 0 ", end="")
-            print("[REJECTED]")
+            print(f"{self.name}: Error, Can't set days less than 0 ")
+            print("Age update rejected")
         else:
             self._age = days
-            print(f"Age updated {self._age} [OK]")
+            print(f"Age updated {self._age} days")
 
-    def set_height(self, size: int) -> None:
+    def set_height(self, size: float) -> None:
         if size < 0:
-            print("ERROR: Cannot set a height less than 0 ", end="")
-            print("[REJECTED]")
+            print(f"{self.name}: Error, Can't set height less than 0 ")
+            print("Height update rejected")
         else:
             self._height = size
-            print(f"Height updated {self._height} [OK]")
+            print(f"Height updated {self._height}cm")
 
-    def get_age(self) -> int:
+    def get_age(self) -> float:
         return self._age
 
-    def get_height(self) -> int:
+    def get_height(self) -> float:
         return self._height
 
     def get_info(self) -> None:
-        print(f"{self.name}: {self._height}cm, {self._age} days")
+        print(f"{self.name}: {round(self._height, 1)}cm, {self._age} days")
 
 
 if __name__ == "__main__":
     print("=== Garden Security System")
+    rose = Plant("Rose", 15.0, 10)
 
-    # 1
-    print("\nCreando planta con datos validos")
-    rose = SecurePlant("Rose", 25, 30)
-    print(f"Plant created: {rose.name}")
-    print("\n--- Estado inicial ---")
-    rose.get_info()
-
-    # 2
-    print("\n--- Actualización ---")
-    rose.set_height(35)
-    print("\nIntento datos erroneos")
-    rose.set_height(-10)
+    print("\n")
+    rose.set_height(25.0)
+    rose.set_age(30)
+    print("\n")
+    rose.set_height(-10.0)
     rose.set_age(-5)
 
-    # 3
-    print("\n--- Estado final ---")
+    print("\nCurrent state: ", end="")
     rose.get_info()

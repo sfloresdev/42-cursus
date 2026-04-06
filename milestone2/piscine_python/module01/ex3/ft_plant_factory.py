@@ -7,12 +7,12 @@ Optimizacion del proceso de creacion e inicializacion
 
 
 class Plant:
-    def __init__(self, name: str, height: int, plant_age: int) -> None:
+    def __init__(self, name: str, height: float, plant_age: int) -> None:
         self.name = name
         self.height = height
         self.plant_age = plant_age
 
-    def grow(self, size: int = 1) -> None:
+    def grow(self, size: float = 1) -> None:
         self.height += size
 
     def age(self, days: int = 1) -> None:
