@@ -1,3 +1,4 @@
+
 import sys
 import typing
 
@@ -16,7 +17,8 @@ def recover_data(file_name: str) -> None:
         print("\nTransform data:")
         transformed_content = content.replace('\n', '#\n')
         print(transformed_content, end="")
-        new_name = input("\nEnter new file name (or empty):")
+        print("\nEnter new file name (or empty):", end="", flush=True)
+        new_name = sys.stdin.readline().strip()
         if not new_name:
             print("Not saving data.")
             return
@@ -27,7 +29,7 @@ def recover_data(file_name: str) -> None:
         print(f"Data saved in file '{new_name}'.")
 
     except (FileNotFoundError, PermissionError) as e:
-        print(f"Error opening file '{file_name}': {e}")
+        sys.stderr.write(f"[STDERR] Error opening file '{file_name}': {e}\n")
 
 
 if __name__ == "__main__":

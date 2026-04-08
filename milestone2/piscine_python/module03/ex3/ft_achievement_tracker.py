@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-"""
-module03.ex3.ft_achievement_tracker
-"""
 
 import random
 

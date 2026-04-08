@@ -1,15 +1,4 @@
 #!/usr/bin/env python3
-"""
-module03.ex0.ft_command_quest - Misión de comandos
-En este ejercicio descubirmos como construir un simple interprete
-de comandos.
-
-La magia esta en:
-- Descubrir como los programas pueden recibir información por linea de comandos
-- Aprender a procesar distintos tipos de datos de entrada
-- Gestionar casos en los que no se indica nada
-- Mostrar la informacion de manera clara para el que lo necesite
-"""
 
 import sys
 

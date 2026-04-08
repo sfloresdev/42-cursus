@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""
-module03.ex1.ft_score_analytics - Procesador de puntuaciones
 
-Ahora que dominamos la comunicación por comandos, esta es la primera misión
-'PixelMetrics3000' necesita un 'Score Cruncher'. Un scoreboard basicamente...
-Pero aqui, construimos el motor que la impulsa
-"""
 import sys
 
 
