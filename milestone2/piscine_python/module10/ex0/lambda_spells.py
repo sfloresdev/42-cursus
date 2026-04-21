@@ -24,10 +24,21 @@ def mage_stats(mages: list[dict]) -> dict:
 
 
 if __name__ == "__main__":
-    artifacts = [{'name': 'Wind Cloak', 'power': 61, 'type': 'armor'}, {'name': 'Lightning Rod', 'power': 103, 'type': 'weapon'}, {'name': 'Ice Wand', 'power': 87, 'type': 'armor'}, {'name': 'Lightning Rod', 'power': 90, 'type': 'focus'}]
+    artifacts = [
+        {'name': 'Wind Cloak', 'power': 61, 'type': 'armor'},
+        {'name': 'Lightning Rod', 'power': 103, 'type': 'weapon'},
+        {'name': 'Ice Wand', 'power': 87, 'type': 'armor'},
+        {'name': 'Lightning Rod', 'power': 90, 'type': 'focus'}
+        ]
     print(f"{artifact_sorter(artifacts)}")
 
-    mages = [{'name': 'Jordan', 'power': 76, 'element': 'wind'}, {'name': 'Riley', 'power': 80, 'element': 'ice'}, {'name': 'Jordan', 'power': 97, 'element': 'lightning'}, {'name': 'Zara', 'power': 87, 'element': 'water'}, {'name': 'Morgan', 'power': 51, 'element': 'wind'}]
+    mages = [
+        {'name': 'Jordan', 'power': 76, 'element': 'wind'},
+        {'name': 'Riley', 'power': 80, 'element': 'ice'},
+        {'name': 'Jordan', 'power': 97, 'element': 'lightning'},
+        {'name': 'Zara', 'power': 87, 'element': 'water'},
+        {'name': 'Morgan', 'power': 51, 'element': 'wind'}
+        ]
     print(f"\n{power_filter(mages, 77)}")
 
     print(f"\n^TEST^{mage_stats(mages)}")
