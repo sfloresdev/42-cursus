@@ -7,22 +7,30 @@
 
  > La formación esta dividida en 2 etapas, la primera y más importante **Common Core** es en la que me encuentro ahora mismo:
 
-- ✔ **Libft** | *Libreria de utilidades estándar desarrollada en **C***
-- ✔ **ft_printf** | *Algo que todos hemos usado **printf()**: prohibido usar si no la programas tu*
-- ✔ **get_next_line** | *Leer de líneas desde un filedescriptor, entendiendo el uso de "static"*
-- ✔ **Born2beroot** | *Configuración de entorno linux seguro desde cero y administración de sistemas*
-- ✔ **push_swap** | *Ordenar datos en un stack con un conjunto limitado de intrucciones, utilizando la menor cantidad de movimientos posibles*
-- ✔ **Python Module 00** | *Introducción a **Python** con escenarios prácticos de un huerto comunitario*
-- ✔ **Python Module 01** | *POO aprendiendo a cultivar plantas virtuales: clases sin darse cuenta*
-- ✔ **Python Module 02** | *Manejo de excepciones en sistemas de monitorización agrícola*
-- ✔ **Python Module 03** | *Estructuras de datos de **Python** procesando datos de videojuegos*
-- ✔ **Python Module 04** | *Operaciones con archivos, flujos de datos y sistemas de archivo robustos*
-- ✔ **Python Module 05** | *Clases abstractas, sobrescritura de métodos y polimorfismo por subtipo*
-- ✔ **Python Module 06** | *Sistema de imports: paquetes, rutas absolutas/relativas y dependencias circulares*
-- ✔ **Python Module 07** | *Patrones de diseño con clases abstractas e interfaces en un sistema de cartas*
-- ✔ **Python Module 08** | *Entornos virtuales, gestión de paquetes (**pip**/Poetry) y variables de entorno*
-- ✔ **Python Module 09** | *Validación de datos con **Pydantic**: modelos y reglas personalizadas*
-- ✔ **Python Module 10** | *Programación funcional avanzada: funciones de orden superior, decoradores y lambdas*
+### milestone0
+
+- ✔ **libft** | *Recrear funciones de la librería estándar de **C** y utilidades propias que se reutilizan en todo el currículo*
+- ✔ **born2beroot** | *Configuración de un entorno **Linux** seguro desde cero: virtualización, usuarios, servicios y administración de sistemas*
+
+### milestone1
+
+- ✔ **ft_printf** | *Reimplementar **printf()** con funciones variádicas — prohibido usarla en 42 si no la programas tú*
+- ✔ **get_next_line** | *Leer contenido línea a línea desde un file descriptor: archivos, stdin y, más adelante, conexiones de red*
+
+### milestone2
+
+- ✔ **push_swap** | *Ordenar datos en un stack con un conjunto limitado de instrucciones, eligiendo algoritmos de ordenación y minimizando movimientos*
+- ✔ **module00** | *Introducción a **Python** a través de escenarios prácticos de un huerto comunitario: sintaxis, variables, bucles, condicionales, funciones y tipos básicos*
+- ✔ **module01** | *Programación orientada a objetos convirtiéndote en jardinero digital: clases, atributos, métodos y constructores cultivando plantas virtuales*
+- ✔ **module02** | *Manejo de excepciones en sistemas de monitorización agrícola: capturar fallos de sensores, alertas personalizadas y pipelines de datos robustos*
+- ✔ **module03** | *Estructuras de datos de **Python** —listas, diccionarios, conjuntos y tuplas— aplicadas a inventarios, puntuaciones y datos de videojuegos*
+- ✔ **module04** | *Operaciones con archivos, gestión de flujos de datos y sistemas de archivo robustos para preservar y proteger información*
+- ✔ **module05** | *Clases abstractas, sobrescritura de métodos y polimorfismo por subtipo en sistemas de procesamiento de datos*
+- ✔ **module06** | *Sistema de imports de **Python**: paquetes con `__init__.py`, imports absolutos y relativos, y resolución de dependencias circulares*
+- ✔ **module07** | *Patrones de diseño con clases abstractas e interfaces construyendo un sistema modular de cartas*
+- ✔ **module08** | *Entornos virtuales, gestión de paquetes con **pip** y **Poetry**, y variables de entorno en un proyecto con temática Matrix*
+- ✔ **module09** | *Validación de datos con **Pydantic**: modelos robustos, reglas personalizadas y estructuras anidadas complejas*
+- ✔ **module10** | *Programación funcional avanzada en **FuncMage Chronicles**: funciones de orden superior, decoradores y lambdas*
 - ✔ **A-Maze-ing** | *Generar y visualizar un laberinto funcional cumpliendo varias restricciones*
 
 <p align="center">
